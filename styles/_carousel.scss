@@ -1,0 +1,61 @@
+.carousel-indicators.carousel-indicators-h {
+  position: relative;
+  margin: 0;
+  flex-direction: column;
+  flex-grow: 1;
+  border-right: none;
+  border-bottom: 2px solid $grey-1;
+  @media screen and (min-width: $md) {
+    border-right: 2px solid $grey-1;
+    border-bottom: none;
+  }
+}
+
+.carousel-indicators__btn {
+  max-width: 100%;
+  align-items: end;
+  display: flex;
+  flex-direction: row;
+  padding-right: 0px;
+  overflow-x: auto;
+  gap: 30px;
+  @media screen and (min-width: $md) {
+    flex-direction: column;
+    max-width: 375px;
+    padding-right: 20px;
+    gap: 0;
+  }
+}
+
+.carousel.slide {
+  grid-template-columns: 100%;
+  @media screen and (min-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.carousel-indicators.carousel-indicators-h [data-bs-target] {
+  text-indent: 0px;
+  width: auto;
+  height: auto;
+  font-size: 38px;
+  background-color: transparent;
+  color: var(--grey-text, #b3b3ba);
+  white-space: nowrap;
+  &.active {
+    background: var(
+      --gradient-text-red-reversed,
+      linear-gradient(90deg, #ef8080 0.84%, #f0145a 99.96%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.carousel-inner {
+  padding-left: 0px;
+  @media screen and (min-width: $md) {
+    padding-left: 60px;
+  }
+}

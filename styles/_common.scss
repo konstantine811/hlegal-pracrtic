@@ -1,0 +1,153 @@
+$rounded-bottom: 0px 0px 12px 12px;
+$grey-1: #cacadb;
+$grey-2: #e7e7f2;
+$md: 768px;
+$sm: 576px;
+
+body {
+  font-family: Montserrat;
+}
+
+a.link {
+  text-decoration: none;
+}
+
+.section-gradient {
+  min-height: 100vh;
+  background: var(
+    --gradient-supersoft,
+    linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643e72 87.46%)
+  );
+  border-radius: $rounded-bottom;
+  position: relative;
+  &__shadow {
+    height: 10px;
+    position: absolute;
+    width: 100%;
+    border-radius: $rounded-bottom;
+    &--1 {
+      bottom: -10px;
+      width: calc(100% - 40px);
+      left: 20px;
+      background-color: $grey-1;
+    }
+    &--2 {
+      bottom: -20px;
+      width: calc(100% - 80px);
+      left: 40px;
+      background-color: $grey-2;
+    }
+  }
+}
+
+.main-wrap {
+  position: relative;
+  min-height: 100vh;
+  &-bg {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    &__h {
+      height: 100%;
+    }
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    position: relative;
+    z-index: 100;
+  }
+  &__title {
+    padding: 0 50px;
+    font-size: 38px;
+  }
+}
+
+.header-grid {
+  padding: 5px;
+  color: white;
+  display: grid;
+  row-gap: 18px;
+  grid-template-areas: "info" "logo" "nav";
+  @media screen and (min-width: $md) {
+    grid-template-areas: "logo info" "logo nav";
+  }
+  &__logo {
+    grid-area: logo;
+  }
+  &__info {
+    grid-area: info;
+  }
+  &__nav {
+    grid-area: nav;
+  }
+}
+
+.btn {
+  &-sm {
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    &.active,
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+
+.navbar-toggler.hlegal-toggler {
+  border: none;
+  outline: none;
+  &:hover {
+    border: none;
+    outline: none;
+  }
+}
+
+.adress-item {
+  display: flex;
+  align-items: center;
+  &:before {
+    content: "";
+    position: relative;
+    height: 6px;
+    width: 6px;
+    background-color: $grey-1;
+    border-radius: 50%;
+    display: inline-block;
+    right: 10px;
+  }
+}
+
+.nav-link-h {
+  color: blue;
+  @media screen and (min-width: $sm) {
+    color: white;
+  }
+}
+
+.offcanvas {
+  border-radius: 8px 8px 0 0;
+}
+
+.btn-circle {
+  background-color: transparent;
+  border: 1px solid $grey-1;
+  border-radius: 50%;
+  display: inline-block;
+  height: 42px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &__icon {
+    fill: $grey-1;
+  }
+}
